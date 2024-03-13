@@ -92,12 +92,12 @@ fun CardTemplate(index: Int) {
 
 @Composable
 fun MainFun() {
-    Column(
+    LazyColumn(
         modifier = Modifier.padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        repeat(5) {
-            CardTemplate(index = it)
+        items(15) { index ->
+            CardTemplate(index = index)
         }
     }
 }
