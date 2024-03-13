@@ -70,6 +70,7 @@ fun CardTemplate(index: Int) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text("Label $index", style = MaterialTheme.typography.labelLarge)
+            Spacer(modifier = Modifier.height(8.dp))
             Image(
                 painter = painterResource(id = R.drawable.ic_launcher_background),
                 contentDescription = null,
@@ -78,6 +79,7 @@ fun CardTemplate(index: Int) {
                     .height(120.dp)
                     .clip(RoundedCornerShape(8.dp))
             )
+            Spacer(modifier = Modifier.height(8.dp))
             if (isActive) {
                 Text(
                     "Description $index",
