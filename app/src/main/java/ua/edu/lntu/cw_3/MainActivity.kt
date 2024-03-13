@@ -59,13 +59,30 @@ fun CardTemplate(index: Int) {
     val cardHeight = if (isActive) 250.dp else 100.dp
 
     Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(cardHeight)
+            .clickable { isActive = !isActive },
+        shape = RoundedCornerShape(8.dp),
     ) {
         Column(
+            modifier = Modifier.padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text()
-            Image()
+            Text("Label $index", style = MaterialTheme.typography.labelLarge)
+            Image(
+                painter = painterResource(id = R.drawable.ic_launcher_background),
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(120.dp)
+                    .clip(RoundedCornerShape(8.dp))
+            )
             if (isActive) {
-                Text( )
+                Text(
+                    "Description $index",
+                    modifier = Modifier.fillMaxHeight()
+                )
             }
         }
     }
