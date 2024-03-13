@@ -55,6 +55,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CardTemplate(index: Int) {
+    var isActive by remember { mutableStateOf(false) }
+    val cardHeight = if (isActive) 250.dp else 100.dp
 
 }
 
